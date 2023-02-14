@@ -1,5 +1,8 @@
 //**************************************** Events ***************************************** */
 
+/**
+ * When the cell was edited
+ */
 function onEdit(e) {
   // Set a comment on the edited cell to indicate when it was changed.
   var range = e.range;
@@ -13,13 +16,7 @@ function onEdit(e) {
  * @see https://developers.google.com/apps-script/guides/triggers#onselectionchangee
  */
 function onSelectionChange(e) {
-  // write(1, 1, JSON.stringify(e))
-  write(1, 1, Math.random());
   toast('SelectionChange');
-
-  // SpreadsheetApp.getActive().toast(123);
-  // Logger.log('Change!');
-
   // Set background to red if a single empty cell is selected.
   const range = e.range;
   if (range.getNumRows() === 1 &&
